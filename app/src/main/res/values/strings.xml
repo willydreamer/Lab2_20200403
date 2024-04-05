@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">laboratorio2</string>
+    <string name="floro">
+        ¡Bienvenido a nuestra Calculadora Virtual TeleMath!
+        Esta calculadora está diseñada para ayudarte a realizar operaciones matemáticas de manera rápida y sencilla.
+        Puedes utilizar los botones numéricos (0-9) para ingresar tus números y seleccionar los botones de operación (+, -, *, /) para realizar sumas, restas, multiplicaciones y divisiones.
+    </string>
+</resources>
