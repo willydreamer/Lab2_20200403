@@ -1,6 +1,6 @@
-
 package com.example.laboratorio2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,12 +53,25 @@ public class CalculosActivity extends AppCompatActivity {
                 String currentText = textViewB.getText().toString();
                 String newText = button.getText().toString();
 
-                if (currentText.equals("0")) {
-                    textViewB.setText(newText);
-                } else {
-                    newText = currentText + newText;
-                    textViewB.setText(newText);
+                if(currentText == "ERROR"){
+                    textViewB.setText("0");
+                    currentText = textViewB.getText().toString();
+                    if (currentText.equals("0")) {
+                        textViewB.setText(newText);
+                    } else {
+                        newText = currentText + newText;
+                        textViewB.setText(newText);
+                    }
                 }
+                else{
+                    if (currentText.equals("0")) {
+                        textViewB.setText(newText);
+                    } else {
+                        newText = currentText + newText;
+                        textViewB.setText(newText);
+                    }
+                }
+
             }
 
         };
@@ -91,16 +104,24 @@ public class CalculosActivity extends AppCompatActivity {
                 Button button = (Button) v;
 
                 String textb = textViewB.getText().toString();
-                //Se obtiene la operacion
-                String op = button.getText().toString();
-                operaciones.add(op);
+                if(textb == "ERROR"){
+                    textViewA.setText("0");
+                    textViewB.setText("0");
 
-                numeros.add(Double.parseDouble(textb));
+                }
+                else{
+                    //Se obtiene la operacion
+                    String op = button.getText().toString();
+                    operaciones.add(op);
 
-                String extra = textb + op;
-                textViewA.setText(extra);
+                    numeros.add(Double.parseDouble(textb));
 
-                textViewB.setText("0");
+                    String extra = textb + op;
+                    textViewA.setText(extra);
+
+                    textViewB.setText("0");
+                }
+
             }
         };
 
@@ -172,18 +193,13 @@ public class CalculosActivity extends AppCompatActivity {
                 numeros.set(0, resultado);
                 textViewA.setText("0");
                 textViewB.setText(resultado.toString());
+
+
+                // Envio de data al historial
+                Intent intent = new Intent(CalculosActivity.this, HistorialActivity.class);
+                intent.putExtra("resultado", resultado);
+                startActivity(intent);
             }
         });
-
-
-
-
-
-
-
-
     }
-
-
-
 }
