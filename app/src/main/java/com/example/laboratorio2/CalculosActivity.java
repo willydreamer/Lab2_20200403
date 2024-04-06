@@ -17,29 +17,30 @@ import java.util.List;
 
 
 public class CalculosActivity extends AppCompatActivity {
+    public void onBtnCalcularClick2(View view) {
+        Intent intent = new Intent(CalculosActivity.this, HistorialActivity.class);
+        startActivity(intent);
+    }
 
     private List<Double> historialResultados = new ArrayList<>();
 
     // Lista para almacenar los números y operaciones ingresadas
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.btnHistorial2) {
-            Intent intent = new Intent(CalculosActivity.this, HistorialActivity.class);
-            intent.putExtra("historialResultados", new ArrayList<>(historialResultados));
-            startActivity(intent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        if (id == R.id.btnHistorial2) {
+//            Intent intent = new Intent(CalculosActivity.this, HistorialActivity.class);
+//            intent.putExtra("historialResultados", new ArrayList<>(historialResultados));
+//            startActivity(intent);
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     List<Double> numeros = new ArrayList<>();
     List<String> operaciones = new ArrayList<>();
 
-    public void onBtnCalcularClick2(View view) {
-        Intent intent = new Intent(CalculosActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -213,6 +214,7 @@ public class CalculosActivity extends AppCompatActivity {
                 numeros.set(0, resultado);
                 textViewA.setText("0");
                 textViewB.setText(resultado.toString());
+
                 historialResultados.add(resultado);
 
             }

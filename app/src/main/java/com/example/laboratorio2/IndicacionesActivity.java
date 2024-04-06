@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class IndicacionesActivity extends AppCompatActivity {
     public void onBtnCalcularClick(View view) {
-        Intent intent = new Intent(IndicacionesActivity.this, CalculosActivity.class);
+        Intent intent = new Intent(IndicacionesActivity.this, MainActivity.class);
         startActivity(intent);
     }
     @Override
@@ -22,7 +22,7 @@ public class IndicacionesActivity extends AppCompatActivity {
         btnCalculos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndicacionesActivity.this, MainActivity.class);
+                Intent intent = new Intent(IndicacionesActivity.this, CalculosActivity.class);
                 startActivity(intent);
             }
         });
