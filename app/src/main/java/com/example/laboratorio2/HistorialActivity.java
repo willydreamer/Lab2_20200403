@@ -17,16 +17,19 @@ public class HistorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial);
 
-//        List<Double> historialResultados = (List<Double>) getIntent().getSerializableExtra("historialResultados");
-//
-//        LinearLayout linearLayout = findViewById(R.id.linearLayout);
-//        for (int i = 0; i < historialResultados.size(); i++) {
-//            String resultadoString = "Respuesta " + (i + 1) + ": " + historialResultados.get(i);
-//            TextView textView = new TextView(this);
-//            textView.setText(resultadoString);
-//            linearLayout.addView(textView);
-//        }
-
+        LinearLayout linearLayout = findViewById(R.id.linearLayout);
+        Intent intent = getIntent();
+        if (intent != null) {
+            List<Double> historialResultados = (List<Double>) intent.getSerializableExtra("historialResultados");
+            if (historialResultados != null) {
+                for (int i = 0; i < historialResultados.size(); i++) {
+                    String resultadoString = "Respuesta " + (i + 1) + ": " + historialResultados.get(i);
+                    TextView textView = new TextView(this);
+                    textView.setText(resultadoString);
+                    linearLayout.addView(textView);
+                }
+            }
+        }
 
     }
     public void onBtnCalcularClick3(View view) {

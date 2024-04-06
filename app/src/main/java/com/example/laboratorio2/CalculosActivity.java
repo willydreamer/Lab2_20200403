@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,25 +18,13 @@ import java.util.List;
 
 
 public class CalculosActivity extends AppCompatActivity {
+    private List<Double> historialResultados = new ArrayList<>();
     public void onBtnCalcularClick2(View view) {
         Intent intent = new Intent(CalculosActivity.this, HistorialActivity.class);
+        intent.putExtra("historialResultados", new ArrayList<>(historialResultados));
         startActivity(intent);
     }
 
-    private List<Double> historialResultados = new ArrayList<>();
-
-    // Lista para almacenar los números y operaciones ingresadas
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        if (id == R.id.btnHistorial2) {
-//            Intent intent = new Intent(CalculosActivity.this, HistorialActivity.class);
-//            intent.putExtra("historialResultados", new ArrayList<>(historialResultados));
-//            startActivity(intent);
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
     List<Double> numeros = new ArrayList<>();
     List<String> operaciones = new ArrayList<>();
@@ -210,11 +199,9 @@ public class CalculosActivity extends AppCompatActivity {
 
                 textViewA.setText(String.valueOf(resultado));
                 operaciones.clear();
-                textViewB.setText(resultado.toString());
                 numeros.set(0, resultado);
                 textViewA.setText("0");
                 textViewB.setText(resultado.toString());
-
                 historialResultados.add(resultado);
 
             }
