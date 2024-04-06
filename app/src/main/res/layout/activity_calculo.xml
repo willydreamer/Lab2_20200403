@@ -6,6 +6,59 @@
     android:layout_height="match_parent">
 
     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9AC5EA"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:orientation="horizontal"
+            android:weightSum="4">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="81dp"
+            android:layout_height="66dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="onBackPressed"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/flecha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="233dp"
+            android:layout_height="66dp"
+            android:gravity="center"
+            android:text="Lab2 - IoT"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnHistorial2"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnHistorial2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="openHistorial"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/pasado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <FrameLayout
         android:layout_width="357dp"
         android:layout_height="469dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,8 +89,8 @@
                     android:text="" />
 
                 <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="98dp"
+                    android:id="@+id/textViewA"
+                    android:layout_width="344dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|end"
                     android:layout_weight="1"
@@ -47,8 +100,8 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="96dp"
+                    android:id="@+id/textViewB"
+                    android:layout_width="340dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_weight="1"
@@ -77,11 +130,11 @@
 
                 <Button
                     android:id="@+id/bt7"
+                    android:layout_width="0dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:autofillHints="#fffff"
                     android:backgroundTint="#C393A6EA"
                     android:text="7"
                     android:textSize="20sp"
@@ -113,7 +166,7 @@
                     app:cornerRadius="0dp" />
 
                 <Button
-                    android:id="@+id/btPro"
+                    android:id="@+id/btDiv"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="5dp"
@@ -234,7 +287,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="_"
+                    android:text="-"
                     android:textSize="24sp"
                     app:cornerRadius="0dp" />
 
@@ -250,7 +303,7 @@
                 android:weightSum="4">
 
                 <Button
-                    android:id="@+id/btClR"
+                    android:id="@+id/btClear"
                     android:layout_width="0dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="5dp"
@@ -258,7 +311,7 @@
                     android:layout_weight="1"
                     android:text="CLR"
                     app:cornerRadius="0dp"
-                    android:textSize="17dp" />
+                    android:textSize="15dp" />
 
                 <Button
                     android:id="@+id/btCero"

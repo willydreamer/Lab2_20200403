@@ -5,28 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
     tools:context=".MainActivity">
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:background="#30B1D8"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:outlineAmbientShadowColor="#9A3E3E"
-            android:outlineSpotShadowColor="#A64848"
-            android:shadowColor="#D14141"
-            android:text="Lab2 - AppsIoT"
-            android:textSize="24sp" />
-
-    </FrameLayout>
 
 
     <LinearLayout
@@ -35,12 +15,14 @@
         android:layout_height="601dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/text1"
+            android:layout_marginBottom="50sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BIENVENIDO"
@@ -54,7 +36,7 @@
             app:srcCompat="@drawable/calcu" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textMain"
             android:layout_width="match_parent"
             android:layout_height="74dp"
             android:gravity="center"
@@ -62,16 +44,17 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnIndicaciones"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:text="Indicaciones" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnCalcular1"
             android:layout_width="219dp"
             android:layout_height="wrap_content"
             android:text="Calcular" />
+
 
     </LinearLayout>
 
