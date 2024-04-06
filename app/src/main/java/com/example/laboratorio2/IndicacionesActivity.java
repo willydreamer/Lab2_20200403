@@ -8,6 +8,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class IndicacionesActivity extends AppCompatActivity {
+    public void onBtnCalcularClick(View view) {
+        Intent intent = new Intent(IndicacionesActivity.this, CalculosActivity.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +26,9 @@ public class IndicacionesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
 
     }
 
